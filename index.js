@@ -6,9 +6,9 @@ const event = new eventEmitter();
 client.on.ready = function () {
   console.log('Client online!');
 };
-let mainChannel = '1075464898097713262';
-let messageChannel = '1041468355007238236';
-let botId = '432610292342587392';
+let mainChannel = process.env.MAIN_CHANNEL;
+let messageChannel = process.env.MESSAGE_CHANNEL;
+let botId = process.env.BOT_ID;
 client.on.message_create = function (message) {
   if (message.channel_id === mainChannel) handleMudae(message);
   if (message.channel_id === messageChannel) handleMessages(message);
